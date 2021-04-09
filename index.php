@@ -10,7 +10,6 @@
     <title>JQ  DataTable</title>  
     <?php 
        require_once "deps.php";
-       require_once "table.php";
     ?>
   </head>
 
@@ -36,10 +35,7 @@
             </div>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        
       </div>
     </nav>
 
@@ -57,10 +53,10 @@
 
     <main role="main" class="container">
       <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-purple rounded box-shadow">
-        <img class="mr-3" src="libs/bootstrap/bootstrap-outline.svg" alt="" width="48" height="48">
-        <img class="mr-3 bg-light rounded" src="imgs/jquery-vertical.svg" alt="" width="48" height="48">
-        <img class="mr-3" src="imgs/datatable-2021940-1705360.png" alt="" width="48" height="48">
-        <img class="mr-3 rounded" src="imgs/md-logo2.png" alt="" width="48" height="48">
+        <img class="mr-3 logo-x48" src="libs/bootstrap/bootstrap-outline.svg" alt="" >
+        <img class="mr-3 bg-light rounded logo-x48" src="imgs/jquery-vertical.svg" alt="">
+        <img class="mr-3 logo-x48" src="imgs/datatable-2021940-1705360.png" alt="" >
+        <img class="mr-3 rounded logo-x48" src="imgs/md-logo2.png" alt="" >
         <div>
         
         </div>
@@ -71,33 +67,13 @@
         </div>
       </div>
 
-      <div class="my-3 p-3 bg-white rounded box-shadow">
-        <h6 class="border-bottom border-gray pb-2 mb-0">Recent updates</h6>
-        <div class="media text-muted pt-3">
-          <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded">
-          <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-            <strong class="d-block text-gray-dark">@username</strong>
-            
-           
-            Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-          </p>
-          <br/>
-          <span>
-              Show: <select id="pages" >
-                       <option value="10">10</option>
-                       <option value="20">20</option>
-                       <option value="30">30</option>
-                       <option value="50">40</option>
-                    </select>
-                    
-            </span>
-        </div>
-        <br/>
-        <?php 
+      <div class="card">
+       <h5 class="card-header">Featured</h5>
+           <div class="card-body">
+             <div id="dTable"></div>
+           </div>
+       </div>
 
-             echo $tb;
-        ?>
-      </div>
 
       
       </div>
@@ -106,3 +82,8 @@
     
   </body>
 </html>
+<script>
+  $(document).ready(function(){
+     $('#dTable').load("table.php");
+  })
+</script>

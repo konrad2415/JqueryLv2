@@ -1,5 +1,19 @@
 <?php 
-$tb=<<<EOT
+    require_once "class/connect.php";
+    if ($conn ->connect_error) die ('ERROR!! Connection failed:'.$conn->connect_error()) ;
+           else {
+            $query = "SELECT id_juego,
+                        nombre,
+                        anio,
+                        empresa
+                    FROM t_juegos";
+
+           $result = mysqli_query($conn,$query);
+                   //echo 'CONNECTED!';
+                   $conn -> close(); 
+          }
+?>  
+
 <table class="table table-bordered">
     <thead>
      <tr class="bg-danger text-white">
@@ -11,34 +25,21 @@ $tb=<<<EOT
      </tr>
         
     </thead>
+    <tbody>
+    <?php
+        while($show=mysqli_fetch_row($result)){
+    ?>
     <tr>
-        <td> CSS Demystified </td>
-        <td> $29 </td>
-        <td> 16 </td>
+        <td><?php echo $show[1]?></td>
+        <td><?php echo $show[2]?></td>
+        <td><?php echo $show[3]?></td>
         <td class="text-center"><a href="#" alt="Edit" class="mdi mdi-clipboard-edit-outline h4"></a></td>
         <td class="text-center"><a href="#" alt="Delete" class="mdi mdi-delete  h4"></a></td>
     </tr>
-    <tr>
-        <td> Mastering JavaScript </td>
-        <td> $35 </td>
-        <td> 10 </td>
-        <td class="text-center"><a href="#" alt="Edit" class="mdi mdi-clipboard-edit-outline h4"></a></td>
-        <td class="text-center"><a href="#" alt="Delete" class="mdi mdi-delete  h4"></a></td>
-    </tr>
-    <tr>
-        <td> HTML5: An Introduction </td>
-        <td> $15 </td>
-        <td> 6 </td>
-        <td class="text-center"><a href="#" alt="Edit" class="mdi mdi-clipboard-edit-outline h4"></a></td>
-        <td class="text-center"><a href="#" alt="Delete" class="mdi mdi-delete  h4"></a></td>
-    </tr>
-    <tr>
-       <td> February </td>
-       <td> 49 </td>
-       <td> 37 </td>
-       <td class="text-center"><a href="#" alt="Edit" class="mdi mdi-clipboard-edit-outline h4"></a></td>
-        <td class="text-center"><a href="#" alt="Delete" class="mdi mdi-delete  h4"></a></td>
-    </tr>
+    <?php 
+         } 
+         ?>
+
+    </tbody>
+    
 </table>
-EOT;
-?>

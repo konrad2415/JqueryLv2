@@ -6,6 +6,7 @@
 <link rel="icon" href="imgs/favicon.ico" />
 
 
+
 <link rel="stylesheet" href="libs/datatable/bootstrap.css" />
 <link rel="stylesheet" href="libs/datatable/dataTables.bootstrap4.min.css" />
 
