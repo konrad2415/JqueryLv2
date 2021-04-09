@@ -60,8 +60,13 @@
         <img class="mr-3" src="libs/bootstrap/bootstrap-outline.svg" alt="" width="48" height="48">
         <img class="mr-3 bg-light rounded" src="imgs/jquery-vertical.svg" alt="" width="48" height="48">
         <img class="mr-3" src="imgs/datatable-2021940-1705360.png" alt="" width="48" height="48">
+        <img class="mr-3 rounded" src="imgs/md-logo2.png" alt="" width="48" height="48">
+        <div>
+        
+        </div>
+        
         <div class="lh-100">
-          <h6 class="mb-0 text-white lh-100">Bootstrap DataTable</h6>
+          <h6 class="mb-0 text-white lh-100">Bootstrap DataTable JQuery and Material Design Icons</h6>
           <small>Learning Purpouses</small>
         </div>
       </div>
@@ -84,7 +89,7 @@
                        <option value="30">30</option>
                        <option value="50">40</option>
                     </select>
-             
+                    
             </span>
         </div>
         <br/>

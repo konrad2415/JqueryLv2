@@ -1,4 +1,38 @@
-     tr:nth-child(even)
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: #222;
+}
+
+      h1,
+      h2,
+      h3,
+      p,
+      div,
+      blockquote,
+      footer {
+        font-family: "Helvetica Neue", Arial, sans-serif;
+      }
+     
+       tr:nth-child(even)
       {
         background-color:#ECE5CE;
       } 
+
+      h1 svg {
+        vertical-align: middle;
+        width: 26px;
+        height: 26px;
+        margin: 0 6px 4px 0;
+    }
+
+    h1 svg path {
+        fill: #FFF;
+    }
+    
