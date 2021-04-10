@@ -14,7 +14,7 @@
           }
 ?>  
 
-<table class="table table-bordered">
+<table class="table table-bordered" id="mTable">
     <thead>
      <tr class="bg-danger text-white">
         <td > Title </td>
@@ -43,3 +43,8 @@
     </tbody>
     
 </table>
+<script type="text/javascript">
+       $(document).ready(function(){
+           $("#mTable").DataTable();
+       });
+</script>

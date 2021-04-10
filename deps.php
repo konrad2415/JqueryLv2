@@ -1,3 +1,4 @@
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 <link rel="stylesheet" href="libs/bootstrap/bootstrap.min.css" />
 <link rel="stylesheet" href="libs/bootstrap/offcanvas.css" />
 <link rel="stylesheet" href="css/own.css" />
