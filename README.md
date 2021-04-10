@@ -8,3 +8,4 @@ Pagination with jQuery...
 Using PHP MySql queries with Ajax 
 <img src="https://user-images.githubusercontent.com/70463453/114253033-55d2c880-9976-11eb-8676-a1ff20963e53.png" >
 
+ 
