@@ -19,11 +19,6 @@ body {
       footer {
         font-family: "Helvetica Neue", Arial, sans-serif;
       }
-     
-       tr:nth-child(even)
-      {
-        background-color:#ECE5CE;
-      } 
 
       h1 svg {
         vertical-align: middle;

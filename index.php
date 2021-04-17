@@ -70,7 +70,7 @@
       <div class="card">
        <h5 class="card-header">Featured</h5>
            <div class="card-body">
-           <a   href="#" class="btn btn-primary" id="addBtn" data-toggle="modal" data-target="#addItem" data-whatever="@mdo"> Add <i class="mdi mdi-table-plus"></i></a>
+           <a   href="#" class="btn btn-primary" id="addBtn" data-toggle="modal" data-target="#addItem " data-whatever="@mdo"> Add <i class="mdi mdi-table-plus"></i></a>
            <br/><br/>
              <div id="dTable"></div>
            </div>
@@ -82,7 +82,7 @@
     </main>
 
 <!-- Modal -->
-<div class="modal fade" id="addItem" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="addItem " tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -92,40 +92,56 @@
         </button>
       </div>
       <div class="modal-body">
-        <form>
+      <form id="addNew">
           <div class="form-group">
-            <label for="recipient-name" class="col-form-label">Recipient:</label>
+            <label for="recipient-name" class="col-form-label">Game[Name]:</label>
+            <input type="text" class="form-control" id="recipient-name" id="game" name="game">
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label" id="launch" name="launch">Launch date:</label>
             <input type="text" class="form-control" id="recipient-name">
           </div>
           <div class="form-group">
-            <label for="message-text" class="col-form-label">Message:</label>
-            <textarea class="form-control" id="message-text"></textarea>
+            <label for="recipient-name" class="col-form-label" id="copany" id="company">Company:</label>
+            <input type="text" class="form-control" id="recipient-name">
           </div>
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Send message</button>
+        <button type="button" class="btn btn-primary" id="saveForm">Save Changes</button>
       </div>
     </div>
   </div>
 </div>
 <script type="text/javascript">
-  $('#addItem').on('show.bs.modal', function (event) {
-  var button = $(event.relatedTarget) // Button that triggered the modal
-  var recipient = button.data('whatever') // Extract info from data-* attributes
-  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-  var modal = $(this)
-  modal.find('.modal-title').text('New message to ' + recipient)
-  modal.find('.modal-body input').val(recipient)
-})
+ $('#addItem').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus');
+});
 </script>
 
   </body>
 </html>
+<script type="text/javascript">
+   $(document).ready(function{
+     $('#saveForm').click(function(){
+        $data=$('#addNew').serialize();
+        $.ajax({
+          type:"POST",
+          data:$data,
+          url:"class/processdata.php",
+          success:function(r){
+            if(r==1){
+              alertify.success("Added to Database");
+              $('#dTable').load("table.php"); // -automatic reload table
+            }
+          }
+        });
+     })
+   });
+</script>
 <script>
   $(document).ready(function(){
      $('#dTable').load("table.php");
-  })
+  });
 </script>
