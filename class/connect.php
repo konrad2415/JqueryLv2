@@ -102,22 +102,5 @@
     FROM t_juegos");
 
 if($t->doClose())echo "<br/>Connection closed successfully";
-       /*
-       
-        if ($conn ->connect_error) die ('ERROR!! Connection failed:'.$conn->connect_error()) ;
-           else {
-            $query = "SELECT id_juego,
-                        nombre,
-                        anio,
-                        empresa
-                    FROM t_juegos";
-
-           $result = mysqli_query($conn,$query);
-                   //echo 'CONNECTED!';
-                   $conn -> close(); 
-          }
-       
-       
-       */
 
 ?>
